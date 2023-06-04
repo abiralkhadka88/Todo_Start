@@ -19,11 +19,11 @@ const MainPage = () =>{
     <div className="todo_container">
       <h3>Your to-do      </h3>
 
-      {getTodo.map(el=><>
+      {getTodo.map((el,index)=><>
       
       <div className="single_todo">{el}
       
-      <Link to={`/view/${el}`}>
+      <Link to={`/view/${index}`}>
         <FaRegEye size={"18px"} />
         </Link>
       
