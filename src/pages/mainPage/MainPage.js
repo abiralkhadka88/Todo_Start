@@ -1,7 +1,8 @@
-import {useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import {useHistory,Link } from "react-router-dom/cjs/react-router-dom.min";
 import NavBar from './NavBar.js';
 import { useRef } from "react";
 import { FaRegEye } from 'react-icons/fa';
+
 
 
 const MainPage = () =>{
@@ -21,7 +22,11 @@ const MainPage = () =>{
       {getTodo.map(el=><>
       
       <div className="single_todo">{el}
-      <FaRegEye size={"18px"} />
+      
+      <Link to={`/view/${el}`}>
+        <FaRegEye size={"18px"} />
+        </Link>
+      
       </div>
       
       </>)
