@@ -4,6 +4,7 @@ import { useHistory,useParams } from "react-router-dom/cjs/react-router-dom";
 
 const ViewPage =()=>{
 
+
     const history = useHistory();
 
     const getParams = useParams();
@@ -22,6 +23,12 @@ const ViewPage =()=>{
     // const getID = getURLParams.get("id");
     // console.log(getID);
     // const getData = getStorage[getID];
+
+    const deleteTodo=()=>{
+        history.replace("/");
+        getStorage.splice(getID,1);
+        localStorage.setItem("todo",JSON.stringify(getStorage));
+    }
     return <>
     
     <NavBar />
@@ -40,6 +47,8 @@ const ViewPage =()=>{
 }}>
     {getData}
     </div>
+
+    <button  onClick={deleteTodo} style={{background:"red"}}>Delete Todo</button>
 
     </div>
     </>
