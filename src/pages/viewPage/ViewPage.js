@@ -1,6 +1,7 @@
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import AuthCheckboolean from "../../middleware/AuthCheckboolean";
 import NavBar from "../mainPage/NavBar";
-import { useHistory,useParams } from "react-router-dom/cjs/react-router-dom";
 
 const ViewPage =()=>{
 
@@ -47,10 +48,14 @@ const ViewPage =()=>{
 }}>
     {getData}
     </div>
+    {AuthCheckboolean()?
+    <><button  onClick={deleteTodo} style={{background:"red"}}>Delete Todo</button>
 
-    <button  onClick={deleteTodo} style={{background:"red"}}>Delete Todo</button>
-
+</> :<> Login to see more options <Link to="/login" > Login Now! </Link>   </> }
+    
     </div>
+
+    
     </>
 
 
