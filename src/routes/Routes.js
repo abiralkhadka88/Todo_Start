@@ -12,6 +12,8 @@ const Routes = ()=>{
         <Route path="/view/:id" component = {ViewPage} exact />
 
         
+
+        
     
     </>
 }

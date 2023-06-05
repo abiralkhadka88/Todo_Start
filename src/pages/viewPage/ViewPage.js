@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import NavBar from "../mainPage/NavBar";
 import { useHistory,useParams } from "react-router-dom/cjs/react-router-dom";
 
@@ -10,8 +11,17 @@ const ViewPage =()=>{
     const getID = getParams.id;
 
     const getStorage = localStorage.getItem("todo")?JSON.parse(localStorage.getItem("todo")):[];
-    
+
     const getData = getStorage[getID];
+    
+    
+    //Query Parse...
+    // const getLocation = useLocation();
+
+    // const getURLParams =  new URLSearchParams(getLocation.search);
+    // const getID = getURLParams.get("id");
+    // console.log(getID);
+    // const getData = getStorage[getID];
     return <>
     
     <NavBar />
